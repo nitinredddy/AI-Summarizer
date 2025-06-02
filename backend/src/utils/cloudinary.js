@@ -14,7 +14,7 @@ const uploadCloudinary = async (localFilePath)=>{
         }
         else{
             const response = await cloudinary.uploader.upload(localFilePath,{
-                resource_type:"auto"
+                resource_type:"raw"
             })
             fs.unlinkSync(localFilePath)
             return response;
