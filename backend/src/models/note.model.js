@@ -6,12 +6,11 @@ const noteSchema = new mongoose.Schema({
         required:true
     },
     summary:String,
-    fileName:String,
+    file:String,
     user:{
         type:mongoose.Schema.Types.ObjectId,
         ref:"User"
     }
-
 },{timestamps:true})
 
 export const Note = mongoose.model("Note",noteSchema)

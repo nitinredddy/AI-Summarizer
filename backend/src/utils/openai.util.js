@@ -1,10 +1,8 @@
-import {Configuration,OpenAIApi} from 'openai'
+import {OpenAI} from 'openai'
 
-const configuration = new Configuration({
+const openAi = new OpenAI({
     apiKey:process.env.OPEN_AI_SECRET
 })
-
-const openAi = new OpenAIApi(configuration)
 
 export const summarizeText = async(yourText)=>{
     const response = await openAi.createChatCompletion({

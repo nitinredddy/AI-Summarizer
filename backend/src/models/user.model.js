@@ -43,7 +43,7 @@ userSchema.methods.checkPassword = async function(password){
 userSchema.methods.generateAccessToken = function(){
     return jwt.sign(
         {
-            email:email.toLowerCase()
+            email:this.email.toLowerCase()
         },
         process.env.ACCESS_TOKEN_SECRET,
         {
@@ -55,7 +55,7 @@ userSchema.methods.generateAccessToken = function(){
 userSchema.methods.generateRefreshToken = function(){
     return jwt.sign(
         {
-            email:email.toLowerCase()
+            email:this.email.toLowerCase()
         },
         process.env.REFRESH_TOKEN_SECRET,
         {
